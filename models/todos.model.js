@@ -1,15 +1,16 @@
-var mongoose = require('mongoose')
-var mongoosePaginate = require('mongoose-paginate')
+var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
 
+const schema=mongoose.Schema;
 
-var ToDoSchema = new mongoose.Schema({
+const ToDoSchema = new schema({
     title: String,
     description: String,
     date: Date,
     status: String
-})
+});
 
-ToDoSchema.plugin(mongoosePaginate)
-const ToDo = mongoose.model('Todo', ToDoSchema)
+ToDoSchema.plugin(mongoosePaginate);
+const ToDo = mongoose.model('Todo', ToDoSchema);
 
 module.exports = ToDo;
