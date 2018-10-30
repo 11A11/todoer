@@ -4,7 +4,7 @@ var mongoosePaginate = require('mongoose-paginate');
 const schema=mongoose.Schema;
 
 const ToDoSchema = new schema({
-    title: String,
+    title: {type: String,default: "null is not zero ~JSON"},
     description: String,
     date: Date,
     status: String
